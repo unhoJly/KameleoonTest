@@ -1,0 +1,18 @@
+version: '3'
+services:
+  server:
+    container_name: server
+    image: kameleoon:v1
+    environment:
+      SPRING_APPLICATION_JSON: >
+        {
+          "db": {
+            "h2": true,
+            "mysql": false,
+            "schema": true,
+            "seed": false,
+            "populate": false
+          }
+        }
+    ports:
+      - "8080:8080"
